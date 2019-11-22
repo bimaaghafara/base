@@ -1,9 +1,21 @@
 import React from 'react';
+import { Result, Button } from 'antd';
 
-const NotFound: React.FC = () => {
+
+const NotFound = (props: any) => {
   return (
     <div>
-      NotFound
+      <Result
+        // change status into icon to change image
+        status="404"
+        title="404"
+        subTitle="Sorry, the page you visited does not exist."
+        extra={
+          <Button type="primary" onClick={() => props.history.push('/')}>
+            Back Home
+          </Button>
+        }
+      />
     </div>
   );
 }
