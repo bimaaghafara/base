@@ -4,9 +4,7 @@ import './login.scss';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
 class LoginPassword extends React.Component<any, any> {
-  state = {
-    LoginPassword: false
-  };
+  state = {};
 
   handleSubmit = (e: any) => {
     e.preventDefault();
@@ -61,15 +59,44 @@ class LoginPassword extends React.Component<any, any> {
       </div>
     );
   }
-  
 }
 const LoginPasswordForm = Form.create({ name: 'LoginPassword' })(LoginPassword);
 
-class LoginForm extends React.Component<any, any> {
+class LoginLogin extends React.Component<any, any> {
+  constructor(props: any) {
+    super(props);
+    this.state = {};
+  }
 
+  handleSubmit = (e: any) => {
+    e.preventDefault();
+    this.props.form.validateFields((err: any, values: any) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
+  };
+
+  render() {
+    const { getFieldDecorator } = this.props.form;
+
+    return (
+      <div>{this.props.loginForm.password} <Button type="primary" onClick={async () => {
+        await this.props.loginForm.setPassword(Math.random()*999999999);
+        this.props.loginForm.login();
+      }}>LoginLogin</Button></div>
+    );
+  }
+  
+}
+const LoginLoginForm: any = Form.create({ name: 'LoginLogin' })(LoginLogin);
+
+class LoginForm extends React.Component<any, any> {
   state = {
     username: '',
-    password: 'passwordState'
+    setPassword: this.setPassword.bind(this),
+    password: 'passwordState',
+    login: this.login.bind(this)
   };
 
   componentDidMount() {
@@ -89,17 +116,24 @@ class LoginForm extends React.Component<any, any> {
   }
 
   render() {
+    const loginForm = {
+      password: this.state.password,
+      login: this.login.bind(this),
+      setUsername: this.setUsername.bind(this),
+      setPassword: this.setPassword.bind(this)
+    };
     return (
       <Fragment>
         {!this.state.username &&
           <div>
             Login Password
             <br/><br/>
-            <Button type="primary" onClick={ async () => {
+            {/* <Button type="primary" onClick={ async () => {
               await this.setPassword('dsfdsfdsf');
               this.login();
             }}>tesss</Button>
-            <Button type="primary" onClick={() => this.setUsername('usernameState')}>goToLoginPassword</Button>
+            <Button type="primary" onClick={() => this.setUsername('usernameState')}>goToLoginPassword</Button> */}
+            <LoginLoginForm loginForm={this.state}></LoginLoginForm>
           </div>
         }
         {this.state.username &&
