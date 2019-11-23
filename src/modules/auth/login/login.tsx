@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './login.scss';
+import { LoginProvider, LoginConsumer } from './login.context';
 
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
@@ -81,10 +82,17 @@ class LoginLogin extends React.Component<any, any> {
     const { getFieldDecorator } = this.props.form;
 
     return (
-      <div>{this.props.loginForm.password} <Button type="primary" onClick={async () => {
-        await this.props.loginForm.setPassword(Math.random()*999999999);
-        this.props.loginForm.login();
-      }}>LoginLogin</Button></div>
+      <Fragment>
+        <LoginConsumer>
+          {({visibleComponent, updateVisibleComponent}: any) => (
+            <Fragment>
+              <Button type="primary" onClick={() => {
+                updateVisibleComponent(visibleComponent === 'LoginLogin'? 'LoginPassword' : 'LoginLogin');
+              }}>togle visibleComponent</Button>
+            </Fragment>
+          )}
+        </LoginConsumer>
+      </Fragment>
     );
   }
   
@@ -124,21 +132,32 @@ class LoginForm extends React.Component<any, any> {
     };
     return (
       <Fragment>
-        {!this.state.username &&
-          <div>
-            Login Password
-            <br/><br/>
-            {/* <Button type="primary" onClick={ async () => {
-              await this.setPassword('dsfdsfdsf');
-              this.login();
-            }}>tesss</Button>
-            <Button type="primary" onClick={() => this.setUsername('usernameState')}>goToLoginPassword</Button> */}
-            <LoginLoginForm loginForm={this.state}></LoginLoginForm>
-          </div>
-        }
-        {this.state.username &&
-          <LoginPasswordForm></LoginPasswordForm>
-        }
+        <LoginProvider>
+          <LoginConsumer>
+            {({visibleComponent}: any) => (
+              <Fragment>
+                <div>
+                visibleComponent: {visibleComponent}
+                </div>
+                {!this.state.username &&
+                  <div>
+                    {/* <Button type="primary" onClick={ async () => {
+                      await this.setPassword('dsfdsfdsf');
+                      this.login();
+                    }}>tesss</Button>
+                    <Button type="primary" onClick={() => this.setUsername('usernameState')}>goToLoginPassword</Button> */}
+                    <LoginLoginForm loginForm={this.state}></LoginLoginForm>
+                  </div>
+                }
+
+                {visibleComponent === 'LoginPassword' &&
+                  <LoginPasswordForm></LoginPasswordForm>
+                }
+                
+              </Fragment>
+            )}
+          </LoginConsumer>
+        </LoginProvider>
       </Fragment>
     );
   }
