@@ -1,5 +1,4 @@
 #login-page {
-
     .login-form {    
         margin: auto;
         max-width: 350px;
@@ -12,5 +11,16 @@
     }
     .login-form-button {
         width: 100%;
-    }
+		}
+		
+		#login-login {
+			.create-account-button {
+				float: left;
+				width: 130px;
+			}
+			.next-button {
+				float: right;
+				width: 130px;
+			}
+		}
 }

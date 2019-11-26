@@ -14,7 +14,7 @@ class LoginForm extends React.Component<any, any> {
   
   render() {
     return (
-      <Fragment>
+      <div id="login-page">
         <LoginProvider>
           <LoginConsumer>
             {({visibleComponent}: any) => (
@@ -31,7 +31,7 @@ class LoginForm extends React.Component<any, any> {
             )}
           </LoginConsumer>
         </LoginProvider>
-      </Fragment>
+      </div>
     );
   }
 }
