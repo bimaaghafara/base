@@ -37,21 +37,28 @@ class LoginLogin extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						<Button
-							type="default"
-							className="create-account-button"
-							onClick={() => {}}>
-							Create Account
-						</Button>
-						<Button
-							type="primary"
-							htmlType="submit"
-							className="next-button"
-							onClick={() => {
-							loginContext.updateVisibleComponent(loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
-						}}>
-							Next
-						</Button>
+						<div>
+							<a className="login-form-forgot" href="">
+								Forgot email?
+							</a>
+						</div>
+						<div style={{clear: 'both'}}>
+							<Button
+								type="default"
+								className="create-account-button"
+								onClick={() => {}}>
+								Create Account
+							</Button>
+							<Button
+								type="primary"
+								htmlType="submit"
+								className="next-button"
+								onClick={() => {
+								loginContext.updateVisibleComponent(loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
+							}}>
+								Next
+							</Button>
+						</div>
 					</Form.Item>
 				</Form>
 			</div>

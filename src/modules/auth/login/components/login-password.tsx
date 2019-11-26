@@ -54,7 +54,7 @@ class LoginPassword extends React.Component<any, any> {
 							initialValue: true,
 						})(<Checkbox>Remember me</Checkbox>)}
 						<a className="login-form-forgot" href="">
-							Forgot password
+							Forgot password?
 						</a>
 						<Button
 							type="primary"
