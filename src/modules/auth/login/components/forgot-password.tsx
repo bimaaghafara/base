@@ -7,6 +7,7 @@ import { withLoginContext } from '../login.context';
 
 // 3rd libs
 import { Form, Icon, Input, Button } from 'antd';
+import { withRouter } from 'react-router-dom';
 
 class ForgotPasswordForm extends React.Component<any, any> {
 	constructor(props: any) {
@@ -44,13 +45,6 @@ class ForgotPasswordForm extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						<div>
-							<a
-								className="login-form-forgot"
-								onClick={() => loginContext.updateVisibleComponent('ForgotPassword')}>
-								Forgot email?
-							</a>
-						</div>
 						<div style={{clear: 'both'}}>
 							<Button
 								type="default"
@@ -62,7 +56,7 @@ class ForgotPasswordForm extends React.Component<any, any> {
 								type="primary"
 								htmlType="submit"
 								className="next-button"
-								onClick={() => {}}>
+								onClick={() => {this.props.history.push('/change-password')}}>
 								Next
 							</Button>
 						</div>
@@ -74,4 +68,8 @@ class ForgotPasswordForm extends React.Component<any, any> {
 
 }
 
-export const ForgotPassword: any = Form.create({ name: 'ForgotPassword' })(withLoginContext(ForgotPasswordForm));
+export const ForgotPassword: any = Form.create({ name: 'ForgotPassword' })(
+	withLoginContext(
+		withRouter(ForgotPasswordForm)
+	)
+);
