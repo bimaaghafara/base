@@ -8,7 +8,7 @@ import { withLoginContext } from '../login.context';
 // 3rd libs
 import { Form, Icon, Input, Button } from 'antd';
 
-class ForgotPassword extends React.Component<any, any> {
+class ForgotPasswordForm extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {};
@@ -36,4 +36,4 @@ class ForgotPassword extends React.Component<any, any> {
 
 }
 
-export const ForgotPasswordForm: any = Form.create({ name: 'ForgotPassword' })(withLoginContext(ForgotPassword));
+export const ForgotPassword: any = Form.create({ name: 'ForgotPassword' })(withLoginContext(ForgotPasswordForm));

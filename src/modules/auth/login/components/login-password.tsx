@@ -7,7 +7,7 @@ import { withLoginContext } from '../login.context';
 // 3rd libs
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-class LoginPassword extends React.Component<any, any> {
+class LoginPasswordForm extends React.Component<any, any> {
 	state = {};
 
 	handleSubmit = (e: any) => {
@@ -77,4 +77,4 @@ class LoginPassword extends React.Component<any, any> {
 	}
 }
 
-export const LoginPasswordForm = Form.create({ name: 'LoginPassword' })(withLoginContext(LoginPassword));
+export const LoginPassword = Form.create({ name: 'LoginPassword' })(withLoginContext(LoginPasswordForm));

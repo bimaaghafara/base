@@ -8,7 +8,7 @@ import { withLoginContext } from '../login.context';
 // 3rd libs
 import { Form, Icon, Input, Button } from 'antd';
 
-class LoginLogin extends React.Component<any, any> {
+class LoginLoginForm extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {};
@@ -73,4 +73,4 @@ class LoginLogin extends React.Component<any, any> {
 
 }
 
-export const LoginLoginForm: any = Form.create({ name: 'LoginLogin' })(withLoginContext(LoginLogin));
+export const LoginLogin: any = Form.create({ name: 'LoginLogin' })(withLoginContext(LoginLoginForm));

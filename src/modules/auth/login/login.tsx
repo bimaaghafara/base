@@ -3,12 +3,12 @@ import './login.scss';
 
 // components
 import { LoginProvider, LoginConsumer } from './login.context';
-import { LoginPasswordForm } from './components/login-password';
-import { LoginLoginForm } from './components/login-login';
-import { ForgotPasswordForm } from './components/forgot-password';
+import { LoginPassword } from './components/login-password';
+import { LoginLogin } from './components/login-login';
+import { ForgotPassword } from './components/forgot-password';
 
 
-class LoginForm extends React.Component<any, any> {
+class Login extends React.Component<any, any> {
   state = {};
 
   componentDidMount() {
@@ -22,15 +22,15 @@ class LoginForm extends React.Component<any, any> {
             {({visibleComponent}: any) => (
               <Fragment>
                 {visibleComponent === 'LoginLogin' &&
-                  <LoginLoginForm></LoginLoginForm>
+                  <LoginLogin></LoginLogin>
                 }
 
                 {visibleComponent === 'LoginPassword' &&
-                  <LoginPasswordForm></LoginPasswordForm>
+                  <LoginPassword></LoginPassword>
                 }
 
 								{visibleComponent === 'ForgotPassword' &&
-                  <ForgotPasswordForm></ForgotPasswordForm>
+                  <ForgotPassword></ForgotPassword>
                 }
 
               </Fragment>
@@ -41,4 +41,4 @@ class LoginForm extends React.Component<any, any> {
     );
   }
 }
-export default LoginForm;
+export default Login;
