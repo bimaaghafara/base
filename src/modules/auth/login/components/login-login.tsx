@@ -1,8 +1,12 @@
 
 import React, { Fragment } from 'react';
 import '../login.scss';
-import { LoginProvider, LoginConsumer, withLoginContext } from '../login.context';
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+
+// components
+import { withLoginContext } from '../login.context';
+
+// 3rd libs
+import { Form, Icon, Input, Button } from 'antd';
 
 class LoginLogin extends React.Component<any, any> {
 	constructor(props: any) {

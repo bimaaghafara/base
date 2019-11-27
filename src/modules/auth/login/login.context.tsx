@@ -6,7 +6,7 @@ const LoginContext: any = createContext({
 	updateVisibleComponent: () => { },
 });
 
-// provider
+// LoginContext Provider
 export class LoginProvider extends React.Component {
 	updateVisibleComponent = (newVisibleComponent: 'LoginLogin' | 'LoginPassword') => {
 		this.setState({ visibleComponent: newVisibleComponent });
@@ -26,8 +26,10 @@ export class LoginProvider extends React.Component {
 	}
 }
 
+// LoginContext Consumer
 export const LoginConsumer = LoginContext.Consumer;
 
+// LoginContext HOC to passing loginContext as a props
 export const withLoginContext = (Component: any) => {
 	return (props: any) => {
 		return (
