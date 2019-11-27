@@ -31,6 +31,9 @@ class LoginLoginForm extends React.Component<any, any> {
 			<div id="login-login">
 				<Form onSubmit={this.handleSubmit} className="login-form">
 					<Form.Item>
+						Sign In to continue
+					</Form.Item>
+					<Form.Item>
 						{getFieldDecorator('username', {
 							rules: [{ required: true, message: 'Please input your username!' }],
 						})(
@@ -44,7 +47,7 @@ class LoginLoginForm extends React.Component<any, any> {
 						<div>
 							<a
 								className="login-form-forgot"
-								onClick={() => loginContext.updateVisibleComponent('ForgotPassword')}>
+								onClick={() => {}}>
 								Forgot email?
 							</a>
 						</div>
