@@ -1,5 +1,7 @@
 import React, { createContext } from 'react';
 
+type VisibleComponent = 'LoginLogin' | 'LoginPassword' | 'ForgotPassword';
+
 // default value for LoginContext
 const LoginContext: any = createContext({
 	visibleComponent: 'LoginLogin',
@@ -8,7 +10,7 @@ const LoginContext: any = createContext({
 
 // LoginContext Provider
 export class LoginProvider extends React.Component {
-	updateVisibleComponent = (newVisibleComponent: 'LoginLogin' | 'LoginPassword') => {
+	updateVisibleComponent = (newVisibleComponent: VisibleComponent) => {
 		this.setState({ visibleComponent: newVisibleComponent });
 	};
 

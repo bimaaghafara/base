@@ -1,5 +1,5 @@
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import '../login.scss';
 
 // components
@@ -42,7 +42,9 @@ class LoginLogin extends React.Component<any, any> {
 					</Form.Item>
 					<Form.Item>
 						<div>
-							<a className="login-form-forgot" href="">
+							<a
+								className="login-form-forgot"
+								onClick={() => loginContext.updateVisibleComponent('ForgotPassword')}>
 								Forgot email?
 							</a>
 						</div>
@@ -58,7 +60,7 @@ class LoginLogin extends React.Component<any, any> {
 								htmlType="submit"
 								className="next-button"
 								onClick={() => {
-								loginContext.updateVisibleComponent(loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
+									loginContext.updateVisibleComponent(loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
 							}}>
 								Next
 							</Button>
