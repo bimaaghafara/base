@@ -22,6 +22,8 @@ const App: React.FC = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
+
+        {/* not found must be placed in last */}
         <Route component={NotFound} />
       </Switch>
     </Router>

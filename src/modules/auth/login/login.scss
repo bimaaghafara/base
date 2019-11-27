@@ -1,0 +1,26 @@
+#login-page {
+    .login-form {    
+        margin: auto;
+        max-width: 350px;
+        background: #fcfcfc;
+        padding: 24px;
+        border-radius: 16px;
+    }
+    .login-form-forgot {
+        float: right;
+    }
+    .login-form-button {
+        width: 100%;
+		}
+		
+		#login-login {
+			.create-account-button {
+				float: left;
+				width: 130px;
+			}
+			.next-button {
+				float: right;
+				width: 130px;
+			}
+		}
+}
