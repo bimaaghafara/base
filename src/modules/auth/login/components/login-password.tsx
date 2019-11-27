@@ -74,7 +74,6 @@ class LoginPasswordForm extends React.Component<any, any> {
 							}}>
 							Log in
 						</Button>
-						Or <a href="">register now!</a>
 					</Form.Item>
 				</Form>
 			</div>

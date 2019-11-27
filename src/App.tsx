@@ -7,6 +7,7 @@ import './App.scss';
 import Login from  './modules/auth/login';
 import NotFound from './modules/auth/not-found';
 import ChangePassword from './modules/auth/change-password';
+import CreateAccount from './modules/auth/create-account';
 
 // 3rd lib
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route exact path="/" component={Home} />ChangePassword
         <Route exact path="/login" component={Login} />
         <Route exact path="/change-password" component={ChangePassword} />
+        <Route exact path="/create-account" component={CreateAccount} />
 
         {/* not found must be placed in last */}
         <Route component={NotFound} />
