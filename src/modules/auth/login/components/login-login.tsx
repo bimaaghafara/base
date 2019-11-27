@@ -7,6 +7,7 @@ import { withLoginContext } from '../login.context';
 
 // 3rd libs
 import { Form, Icon, Input, Button } from 'antd';
+import { withRouter } from 'react-router-dom';
 
 class LoginLoginForm extends React.Component<any, any> {
 	constructor(props: any) {
@@ -55,7 +56,7 @@ class LoginLoginForm extends React.Component<any, any> {
 							<Button
 								type="default"
 								className="create-account-button"
-								onClick={() => {}}>
+								onClick={() => {this.props.history.push('/create-account')}}>
 								Create Account
 							</Button>
 							<Button
@@ -76,4 +77,8 @@ class LoginLoginForm extends React.Component<any, any> {
 
 }
 
-export const LoginLogin: any = Form.create({ name: 'LoginLogin' })(withLoginContext(LoginLoginForm));
+export const LoginLogin: any = Form.create({ name: 'LoginLogin' })(
+	withLoginContext(
+		withRouter(LoginLoginForm)
+	)
+);

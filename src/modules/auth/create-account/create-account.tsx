@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import './create-account.scss';
+import { CreateYourAccount } from './components/create-your-account';
 
 // components
 
@@ -13,7 +14,7 @@ class CreateAccount extends React.Component<any, any> {
   render() {
     return (
       <div id="create-account-page">
-        CreateAccount
+        <CreateYourAccount></CreateYourAccount>
 			</div>
     );
   }
