@@ -1,0 +1,17 @@
+#verify-email-page {
+	.verify-your-email-form {    
+		margin: auto;
+		max-width: 350px;
+		background: #fcfcfc;
+		padding: 24px;
+		border-radius: 16px;
+		.back-button {
+			float: left;
+			width: 130px;
+		}
+		.verify-button {
+			float: right;
+			width: 130px;
+		}
+	}
+}

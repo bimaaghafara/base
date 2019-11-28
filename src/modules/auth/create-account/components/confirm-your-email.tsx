@@ -20,7 +20,7 @@ class ConfirmYourEmailForm extends React.Component<any, any> {
 						<Button
 							type="default"
 							className="create-account-button"
-							onClick={() => {}}>
+							onClick={() => {this.props.history.push('/verify-email')}}>
 							Continue
 						</Button>
 						<Button
