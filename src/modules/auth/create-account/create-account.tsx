@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import './create-account.scss';
-import { CreateYourAccount } from './components/create-your-account';
 
 // components
+import { CreateAccountProvider, CreateAccountConsumer } from './create-account.context';
+import { CreateYourAccount } from './components/create-your-account';
+import { ConfirmYourEmail } from './components/confirm-your-email';
 
 
 class CreateAccount extends React.Component<any, any> {
@@ -14,7 +16,20 @@ class CreateAccount extends React.Component<any, any> {
   render() {
     return (
       <div id="create-account-page">
-        <CreateYourAccount></CreateYourAccount>
+				<CreateAccountProvider>
+          <CreateAccountConsumer>
+            {({visibleComponent}: any) => (
+              <Fragment>
+								{visibleComponent === 'CreateYourAccount' &&
+									<CreateYourAccount />
+                }
+								{visibleComponent === 'ConfirmYourEmail' &&
+									<ConfirmYourEmail />
+                }
+							</Fragment>
+						)}
+					</CreateAccountConsumer>
+				</CreateAccountProvider>
 			</div>
     );
   }

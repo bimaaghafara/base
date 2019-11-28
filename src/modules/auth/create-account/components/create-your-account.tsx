@@ -4,6 +4,7 @@ import './create-your-account.scss';
 // 3rd libs
 import { Form, Icon, Input, Button, DatePicker, Select, AutoComplete } from 'antd';
 import { withRouter } from 'react-router-dom';
+import { withCreateAccountContext } from '../create-account.context';
 
 class CreateYourAccountForm extends React.Component<any, any> {
 	constructor(props: any) {
@@ -22,9 +23,10 @@ class CreateYourAccountForm extends React.Component<any, any> {
 
 	render() {
 		const { getFieldDecorator } = this.props.form;
+		const { createAccountContext } = this.props;
 
 		return (
-			<div id="create-your-account">
+			<div id="confirm-your-account">
 				<Form onSubmit={this.handleSubmit} className="create-your-account-form">
 					<Form.Item>
 						Create your account:
@@ -125,7 +127,7 @@ class CreateYourAccountForm extends React.Component<any, any> {
 								type="primary"
 								htmlType="submit"
 								className="next-button"
-								onClick={() => {}}>
+								onClick={() => {createAccountContext.updateVisibleComponent('ConfirmYourEmail')}}>
 								Next
 							</Button>
 						</div>
@@ -136,4 +138,8 @@ class CreateYourAccountForm extends React.Component<any, any> {
 	}
 }
 
-export const CreateYourAccount: any = Form.create({ name: 'CreateYourAccount' })(withRouter(CreateYourAccountForm));
+export const CreateYourAccount: any = Form.create({ name: 'CreateYourAccount' })(
+	withRouter(
+		withCreateAccountContext(CreateYourAccountForm)
+	)
+);
