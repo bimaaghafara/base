@@ -3,6 +3,7 @@ import './verify-email.scss';
 
 // components
 import { VerifyYourEmail } from './components/verify-your-email';
+import Congratulation from './components/congratulation';
 
 
 class VerifyEmail extends React.Component<any, any> {
@@ -26,7 +27,7 @@ class VerifyEmail extends React.Component<any, any> {
 					<VerifyYourEmail updateVisibleComponent={this.updateVisibleComponent.bind(this)} />
 				}
 				{visibleComponent === 'Congratulations' &&
-					<div>Congratulations</div>
+					<Congratulation />
 				}
 			</div>
     );
