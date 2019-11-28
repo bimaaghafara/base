@@ -47,14 +47,14 @@ class VerifyYourEmailForm extends React.Component<any, any> {
 							<Button
 								type="default"
 								className="back-button"
-								onClick={() => {}}>
+								onClick={() => {this.props.history.goBack()}}>
 								Back
 							</Button>
 							<Button
 								type="primary"
 								htmlType="submit"
 								className="verify-button"
-								onClick={() => {}}>
+								onClick={() => {this.props.updateVisibleComponent('Congratulations')}}>
 								Verify
 							</Button>
 						</div>

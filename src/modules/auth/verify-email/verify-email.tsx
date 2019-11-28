@@ -19,23 +19,15 @@ class VerifyEmail extends React.Component<any, any> {
   }
   
   render() {
+		const {visibleComponent} = this.state;
     return (
       <div id="verify-email-page">
-				<VerifyYourEmail></VerifyYourEmail>
-				{/* <VerifyEmailProvider>
-          <VerifyEmailConsumer>
-            {({visibleComponent}: any) => (
-              <Fragment>
-								{visibleComponent === 'CreateYourAccount' &&
-									<CreateYourAccount />
-                }
-								{visibleComponent === 'ConfirmYourEmail' &&
-									<ConfirmYourEmail />
-                }
-							</Fragment>
-						)}
-					</VerifyEmailConsumer>
-				</VerifyEmailProvider> */}
+				{visibleComponent === 'VerifyYourEmail' &&
+					<VerifyYourEmail updateVisibleComponent={this.updateVisibleComponent.bind(this)} />
+				}
+				{visibleComponent === 'Congratulations' &&
+					<div>Congratulations</div>
+				}
 			</div>
     );
   }
