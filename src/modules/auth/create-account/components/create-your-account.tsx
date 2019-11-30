@@ -27,7 +27,6 @@ class CreateYourAccountForm extends React.Component<any, any> {
 		e.preventDefault();
 		this.props.form.validateFields((err: any, values: any) => {
 			if (!err) {
-				const model = this.getModel(values);
 				Http.post('/api/RegisterUser', this.getModel(values), {
 					// just remove when you want to add loader
 					showLoader: false

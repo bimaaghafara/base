@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const Http = axios.create({
-  baseURL: 'https://www.SetAPIUrlhere.com/'
+  baseURL: 'https://www.google.com/'
 })
 
 Http.interceptors.request.use(
