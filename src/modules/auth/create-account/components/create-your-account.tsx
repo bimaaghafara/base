@@ -1,5 +1,6 @@
 import React from 'react';
 import './create-your-account.scss';
+import Http from '../../../../core/http-client/http-client';
 
 // 3rd libs
 import { Form, Icon, Input, Button, DatePicker, Select, AutoComplete } from 'antd';
@@ -12,11 +13,30 @@ class CreateYourAccountForm extends React.Component<any, any> {
 		this.state = {};
 	}
 
+	getModel(values: any) {
+		return {
+			...values,
+			birthYear: values.dateOfBirth.year(),
+			birthMonth: values.dateOfBirth.month()+1,
+			birthDate: values.dateOfBirth.date(),
+		}
+
+	}
+
 	handleSubmit = (e: any) => {
 		e.preventDefault();
 		this.props.form.validateFields((err: any, values: any) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				const model = this.getModel(values);
+				Http.post('/api/RegisterUser', this.getModel(values), {
+					// just remove when you want to add loader
+					showLoader: false
+				} as any)
+				.then( res => {
+					this.props.createAccountContext.updateVisibleComponent('ConfirmYourEmail')
+				}).catch(e => { 
+					console.log(e);
+				});
 			}
 		});
 	};
@@ -46,10 +66,10 @@ class CreateYourAccountForm extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('userName', {
-							rules: [{ required: true, message: 'Please input your username!' }],
+						{getFieldDecorator('email', {
+							rules: [{ required: true, message: 'Please input your email!' }],
 						})(
-							<Input placeholder="Username"/>,
+							<Input placeholder="Email"/>,
 						)}
 					</Form.Item>
 					<Form.Item>
@@ -63,7 +83,7 @@ class CreateYourAccountForm extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('confrimPassword', {
+						{getFieldDecorator('passwordConfirmation', {
 							rules: [{required: true, message: 'Please confirm your password!'}],
 						})(
 							<Input.Password
@@ -78,7 +98,7 @@ class CreateYourAccountForm extends React.Component<any, any> {
 						})(<Input placeholder="Phone Number"/>)}
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('date-picker', {
+						{getFieldDecorator('dateOfBirth', {
 							rules: [{ type: 'object', required: true, message: 'Please select time!' }],
 						})(<DatePicker placeholder="Date of Birth" style={{'width': '100%'}}/>)}
 					</Form.Item>
@@ -108,7 +128,7 @@ class CreateYourAccountForm extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('Address', {
+						{getFieldDecorator('address1', {
 							rules: [{ required: true, message: 'Please input your Address!' }],
 						})(
 							<Input.TextArea placeholder="Address" rows={3}/>,
@@ -127,7 +147,7 @@ class CreateYourAccountForm extends React.Component<any, any> {
 								type="primary"
 								htmlType="submit"
 								className="next-button"
-								onClick={() => {createAccountContext.updateVisibleComponent('ConfirmYourEmail')}}>
+								onClick={() => {}}>
 								Next
 							</Button>
 						</div>
