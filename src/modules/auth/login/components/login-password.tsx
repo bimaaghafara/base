@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import '../login.scss';
 
 // components
@@ -7,7 +7,7 @@ import { withLoginContext } from '../login.context';
 // 3rd libs
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
-class LoginPassword extends React.Component<any, any> {
+class LoginPasswordForm extends React.Component<any, any> {
 	state = {};
 
 	handleSubmit = (e: any) => {
@@ -31,6 +31,9 @@ class LoginPassword extends React.Component<any, any> {
 		return (
 			<div id="login-password">
 				<Form onSubmit={this.handleSubmit} className="login-form">
+					<Form.Item>
+						Welcome
+					</Form.Item>
 					<Form.Item>
 						{getFieldDecorator('username', {
 							rules: [{ required: true, message: 'Please input your username!' }],
@@ -57,7 +60,9 @@ class LoginPassword extends React.Component<any, any> {
 							valuePropName: 'checked',
 							initialValue: true,
 						})(<Checkbox>Remember me</Checkbox>)}
-						<a className="login-form-forgot" href="">
+						<a
+							className="login-form-forgot"
+							onClick={() => loginContext.updateVisibleComponent('ForgotPassword')}>
 							Forgot password?
 						</a>
 						<Button
@@ -69,7 +74,6 @@ class LoginPassword extends React.Component<any, any> {
 							}}>
 							Log in
 						</Button>
-						Or <a href="">register now!</a>
 					</Form.Item>
 				</Form>
 			</div>
@@ -77,4 +81,4 @@ class LoginPassword extends React.Component<any, any> {
 	}
 }
 
-export const LoginPasswordForm = Form.create({ name: 'LoginPassword' })(withLoginContext(LoginPassword));
+export const LoginPassword = Form.create({ name: 'LoginPassword' })(withLoginContext(LoginPasswordForm));

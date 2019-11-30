@@ -9,7 +9,7 @@ import { withLoginContext } from '../login.context';
 import { Form, Icon, Input, Button } from 'antd';
 import { withRouter } from 'react-router-dom';
 
-class LoginLoginForm extends React.Component<any, any> {
+class ForgotPasswordForm extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props);
 		this.state = {};
@@ -29,10 +29,10 @@ class LoginLoginForm extends React.Component<any, any> {
 		const { loginContext } = this.props;
 
 		return (
-			<div id="login-login">
+			<div id="forgot-password">
 				<Form onSubmit={this.handleSubmit} className="login-form">
 					<Form.Item>
-						Sign In to continue
+						Enter Email:
 					</Form.Item>
 					<Form.Item>
 						{getFieldDecorator('username', {
@@ -45,27 +45,18 @@ class LoginLoginForm extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						<div>
-							<a
-								className="login-form-forgot"
-								onClick={() => {}}>
-								Forgot email?
-							</a>
-						</div>
 						<div style={{clear: 'both'}}>
 							<Button
 								type="default"
-								className="create-account-button"
-								onClick={() => {this.props.history.push('/create-account')}}>
-								Create Account
+								className="back-button"
+								onClick={() => loginContext.updateVisibleComponent('LoginPassword')}>
+								Back
 							</Button>
 							<Button
 								type="primary"
 								htmlType="submit"
 								className="next-button"
-								onClick={() => {
-									loginContext.updateVisibleComponent(loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
-							}}>
+								onClick={() => {this.props.history.push('/change-password')}}>
 								Next
 							</Button>
 						</div>
@@ -77,8 +68,8 @@ class LoginLoginForm extends React.Component<any, any> {
 
 }
 
-export const LoginLogin: any = Form.create({ name: 'LoginLogin' })(
+export const ForgotPassword: any = Form.create({ name: 'ForgotPassword' })(
 	withLoginContext(
-		withRouter(LoginLoginForm)
+		withRouter(ForgotPasswordForm)
 	)
 );
