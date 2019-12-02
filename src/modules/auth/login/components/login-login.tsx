@@ -8,6 +8,7 @@ import { withLoginContext } from '../login.context';
 // 3rd libs
 import { Form, Icon, Input, Button } from 'antd';
 import { withRouter } from 'react-router-dom';
+import Http from '../../../../core/http-client/http-client';
 
 class LoginLoginForm extends React.Component<any, any> {
 	constructor(props: any) {
@@ -19,7 +20,12 @@ class LoginLoginForm extends React.Component<any, any> {
 		e.preventDefault();
 		this.props.form.validateFields((err: any, values: any) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				Http.post('/api/LoginUser/CheckUserAccount', values)
+				.then( res => {
+					this.props.loginContext.updateVisibleComponent(this.props.loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
+				}).catch(e => { 
+					console.log(e);
+				});
 			}
 		});
 	};
@@ -35,12 +41,12 @@ class LoginLoginForm extends React.Component<any, any> {
 						Sign In to continue
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('username', {
-							rules: [{ required: true, message: 'Please input your username!' }],
+						{getFieldDecorator('userNameEmail', {
+							rules: [{ required: true, message: 'Please input your username / email!' }],
 						})(
 							<Input
 								prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-								placeholder="Username"
+								placeholder="Username / Email"
 							/>,
 						)}
 					</Form.Item>
@@ -63,9 +69,7 @@ class LoginLoginForm extends React.Component<any, any> {
 								type="primary"
 								htmlType="submit"
 								className="next-button"
-								onClick={() => {
-									loginContext.updateVisibleComponent(loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
-							}}>
+								onClick={() => {}}>
 								Next
 							</Button>
 						</div>

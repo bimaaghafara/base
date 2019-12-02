@@ -9,6 +9,8 @@ import { withLoginContext } from '../login.context';
 import { Form, Icon, Input, Button } from 'antd';
 import { withRouter } from 'react-router-dom';
 
+import Http from '../../../../core/http-client/http-client';
+
 class ForgotPasswordForm extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props);
@@ -19,7 +21,12 @@ class ForgotPasswordForm extends React.Component<any, any> {
 		e.preventDefault();
 		this.props.form.validateFields((err: any, values: any) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				Http.post('/api/ManageUserPassword/ForgotPassword', values)
+				.then( res => {
+					this.props.history.push('/change-password')
+				}).catch(e => { 
+					console.log(e);
+				});
 			}
 		});
 	};
@@ -35,8 +42,8 @@ class ForgotPasswordForm extends React.Component<any, any> {
 						Enter Email:
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('username', {
-							rules: [{ required: true, message: 'Please input your username!' }],
+						{getFieldDecorator('email', {
+							rules: [{ required: true, message: 'Please input your email address!' }],
 						})(
 							<Input
 								prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -56,7 +63,9 @@ class ForgotPasswordForm extends React.Component<any, any> {
 								type="primary"
 								htmlType="submit"
 								className="next-button"
-								onClick={() => {this.props.history.push('/change-password')}}>
+								onClick={() => {
+									//this.props.history.push('/change-password')
+								}}>
 								Next
 							</Button>
 						</div>

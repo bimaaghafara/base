@@ -7,6 +7,8 @@ import { withLoginContext } from '../login.context';
 // 3rd libs
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 
+import Http from '../../../../core/http-client/http-client';
+
 class LoginPasswordForm extends React.Component<any, any> {
 	state = {};
 
@@ -14,7 +16,12 @@ class LoginPasswordForm extends React.Component<any, any> {
 		e.preventDefault();
 		this.props.form.validateFields((err: any, values: any) => {
 			if (!err) {
-				console.log('Received values of form: ', values);
+				Http.post('/api/LoginUser', values)
+				.then( res => {
+					this.props.loginContext.updateVisibleComponent(this.props.loginContext.visibleComponent === 'LoginLogin' ? 'LoginPassword' : 'LoginLogin')
+				}).catch(e => { 
+					console.log(e);
+				});
 			}
 		});
 	};
@@ -35,7 +42,7 @@ class LoginPasswordForm extends React.Component<any, any> {
 						Welcome
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('username', {
+						{getFieldDecorator('userNameEmail', {
 							rules: [{ required: true, message: 'Please input your username!' }],
 						})(
 							<Input
@@ -56,7 +63,7 @@ class LoginPasswordForm extends React.Component<any, any> {
 						)}
 					</Form.Item>
 					<Form.Item>
-						{getFieldDecorator('remember', {
+						{getFieldDecorator('rememberMe', {
 							valuePropName: 'checked',
 							initialValue: true,
 						})(<Checkbox>Remember me</Checkbox>)}
