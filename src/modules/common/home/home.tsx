@@ -12,7 +12,7 @@ class Home extends React.Component<any, any> {
 
 	state = {
     collapsed: false,
-  };
+	};
 
   toggle = () => {
     this.setState({
@@ -24,8 +24,10 @@ class Home extends React.Component<any, any> {
 
     return (
 			<div id="home">
-			<Layout>
+			<Layout style={{maxHeight:'100vh'}} >
 				<Sider
+					theme="dark"
+					width="100%"
 					trigger={null}
 					collapsible
 					collapsed={this.state.collapsed}
@@ -33,7 +35,12 @@ class Home extends React.Component<any, any> {
 					breakpoint="sm"
 					onBreakpoint={(islessThanBreakpoint) => {console.log(islessThanBreakpoint)}}
 				>
-					<div className="logo" />
+					<Icon
+						className="trigger close-menu"
+						type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
+						onClick={this.toggle}
+					/>
+					<div className="logo"/>
 					<Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
 						<Menu.Item key="1">
 							<Icon type="user" />
