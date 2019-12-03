@@ -1,5 +1,19 @@
+$xs: '480px';
+$sm: '576px';
+$md: '768px';
+$lg: '992px';
+$xl: '1200px';
+$xxl: '1600px';
+
 #home {
-	.trigger {
+	.logo {
+		height: 32px;
+		background: rgba(255, 255, 255, 0.2);
+		margin: 16px;
+		margin-right: 50px;
+	}
+
+	.toggle-side-navigation {
 		font-size: 18px;
 		line-height: 64px;
 		padding: 0 24px;
@@ -10,16 +24,26 @@
 			color: #fff;
 			float: right;
 		}
+		&:hover {
+			color: #1890ff;
+		}
 	}
-	
-	.trigger:hover {
-		color: #1890ff;
+
+	.top-navigation {
+		background: #fff;
+		padding: 0;
 	}
-	
-	.logo {
-		height: 32px;
-		background: rgba(255, 255, 255, 0.2);
-		margin: 16px;
-		margin-right: 50px;
+
+	@media screen and (min-width: $md) {
+		.side-navigation {
+			display: none;
+			transition: all 0.25s;
+		}
+
+		.top-navigation {
+			.toggle-side-navigation {
+				display: none;
+			}
+		}
 	}
 }
