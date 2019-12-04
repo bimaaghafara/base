@@ -99,7 +99,7 @@ class Home extends React.Component<any, any> {
 						<div>
 							<Card className="transparent">
 								<h1>Win a Sholarships</h1>
-								<Button type="primary" size="large">
+								<Button type="primary" size="large" onClick={this.showModal}>
 									Learn More
 								</Button>
 							</Card>
