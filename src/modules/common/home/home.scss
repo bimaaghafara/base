@@ -1,58 +1,86 @@
-$xs: '480px';
-$sm: '576px';
-$md: '768px';
-$lg: '992px';
-$xl: '1200px';
-$xxl: '1600px';
+.ant-carousel .carousel-content{
+	text-align: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('/assets/img/mecca.jpg') !important;
+	height: 450px;
+	overflow: hidden;
+	position: relative;
+}
+
+.ant-carousel .carousel-content ul{	
+	padding: 0;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+	margin: auto;
+	width: 100%;
+}
+
+.ant-carousel .carousel-content ul li{
+	list-style: none;
+}
+
+.ant-carousel .carousel-content ul li.inline-item{
+	display: inline;
+	margin: 0px 5px;
+}
+
+.ant-carousel .carousel-content ul li h1{
+	font-weight: 700 !important;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+	color: #fff;
+}
+
 
 #home {
-	.logo {
-		height: 32px;
-		background: rgba(255, 255, 255, 0.2);
-		margin: 16px;
-		margin-right: 50px;
-	}
-
-	.toggle-side-navigation {
-		font-size: 18px;
-		line-height: 64px;
-		padding: 0 24px;
-		cursor: pointer;
-		transition: color 0.3s;
-		&.close-menu {
-			padding: 0 16px;
-			color: #fff;
+	.news-stories {
+		margin-top: 24px;
+		.see-all-news {
 			float: right;
 		}
-		&:hover {
-			color: #1890ff;
+		.news-wrapper {
+			.news-img {
+				margin: 12px;
+				height: 150px;
+				background: #eee;
+			}
+			.news-date {
+				padding: 12px 12px 6px 12px;
+			}
+			.news-description {
+				padding: 6px 12px 12px 12px;
+			}
 		}
 	}
-
-	.top-navigation {
-		background: #fff;
-		padding: 0;
-		.top-menus {
-			display: none;		
+	.donate-support {
+		margin-top: 24px;
+		.see-all-donations {
+			float: right;
 		}
-	}
-
-	@media screen and (min-width: $md) {
-		.side-navigation {
-			display: none;
-			transition: all 0.25s;
-		}
-
-		.top-navigation {
-			.logo {
-				float: left;
+		.donation-wrapper {
+			padding: 24px;
+			outline: 1px solid grey;
+			outline-offset: -12px;
+			.donation-value, .donation-description {
+				text-align: center;
 			}
-			.toggle-side-navigation {
-				display: none;
-			}
-			.top-menus {
+			.donate-now {
 				display: block;
-				line-height: 64px;
+				margin: 12px auto;
+				width: 100%;
+			}
+			.donate-right {
+				display: block;
+				margin: auto;
+				height: 63px;
+				width: 63px;
 			}
 		}
 	}
