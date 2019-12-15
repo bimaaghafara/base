@@ -1,0 +1,182 @@
+#locals-page {
+	.sm-content {
+		@media (min-width: 768px)	{
+			display: none;
+		}
+	}
+	.md-content {
+		@media (max-width: 767px)	{
+			display: none;
+		}	
+	}
+
+	.title-wrapper {
+		.title {
+			display: inline-block;
+		}
+		.breadcrumb {
+			display: inline-block;
+			padding: 0 22px;
+			vertical-align: text-bottom;
+		}
+	}
+	.locations-wrapper {
+		margin-bottom: 16px;
+		.locations-wrapper-title {
+			.locations-title {
+				display: inline-block;
+			}
+			.add-more {
+				padding: 0;
+				display: block;
+				@media (min-width: 992px) {
+					float: right;
+				}
+			}
+			.locations-description {
+				text-align: justify;
+				margin-bottom: 16px;
+			}
+		}
+		.maps-image {
+			background-image: url('/assets/img/maps.jpg') !important;
+			height: 250px;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+			margin-bottom: 16px;
+		}
+	}
+	.advertise-mobile-wrapper{
+		.advertise-image {
+			background: #eee;
+			width: 100%;
+			height: 80px;
+		}
+	}
+	.advertise-wrapper {
+		.advertise-button-wrapper {
+			text-align: right;
+			.advertise-button {
+				display: inline-block;
+				padding: 0;
+			}
+		}
+		.advertise-image {
+			background: #eee;
+			width: 100%;
+			height: 250px;
+		}
+	}
+	.offers-wrapper {
+		.offer-wrapper {
+			margin: 12px 0;
+			border: 1px solid #eee;
+			border-radius: 12px;
+			.avatar {
+				padding: 12px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.description {
+				.title {
+					padding: 0;
+					text-align: left;
+					white-space: normal;
+				}
+				width: calc(100% - 56px);
+				padding: 12px;
+				padding-top: 2px;
+				padding-left: 0px;
+				display: inline-block;
+			}
+		}
+		.more-offer-wrapper{
+			display: block;
+			.more-offer {
+				float: right;
+				padding: 0;
+			}
+		}
+	}
+	.popular-list-wrapper {
+		.popular-wrapper {
+			margin: 12px 0;
+			border-radius: 12px;
+			.avatar {
+				padding: 12px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.description {
+				.title {
+					padding: 0;
+					text-align: left;
+					white-space: normal;
+				}
+				.author {
+					text-align: right;
+				}
+				width: calc(100% - 56px);
+				padding: 12px;
+				padding-top: 2px;
+				padding-left: 0px;
+				display: inline-block;
+				border-bottom: 1px dashed #eee;
+			}
+		}
+		.see-other-wrapper{
+			display: block;
+			.see-other {
+				float: right;
+				padding: 0;
+			}
+		}
+	}
+	.directory-wrapper {
+		.tags-wrapper {
+			padding: 6px 0;
+			.tags {
+				.ant-select-selection {
+					background: #eee;
+					border-radius: 8px;
+					margin: 4px;
+				}
+			}
+		}
+		.search-wrapper {
+			padding: 10px 0;;
+		}
+		.directory-item-wrapper {
+			margin: 12px 0;
+			border-bottom: 1px dashed #ccc;
+			.avatar {
+				padding: 12px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.description {
+				width: calc(100% - 88px);
+				padding: 12px;
+				padding-top: 2px;
+				padding-left: 0px;
+				display: inline-block;
+				.title {
+					white-space: nowrap;
+					text-align: left;
+					padding: 0;
+				}
+				.button-places {
+					button {
+						margin: 6px;
+						margin-left: 0;
+					}
+				}
+				.description-tags span{
+					margin-right: 16px;
+					padding: 8px 0;
+				}
+			}
+		}
+	}
+}

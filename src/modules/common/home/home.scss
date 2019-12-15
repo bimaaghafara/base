@@ -40,6 +40,23 @@
 
 
 #home {
+	.carousel-wrapper {
+		position: relative;
+		.carousel-prev {
+			opacity: 0.6;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin: 0 20px;
+		}
+		.carousel-next {
+			opacity: 0.6;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin: 0 20px;
+		}
+	}
 	.news-stories {
 		margin-top: 24px;
 		.see-all-news {

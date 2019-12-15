@@ -4,9 +4,11 @@ import React from 'react';
 import './home.scss';
 
 // 3rd libs
-import { Carousel, Card, Button, Form, Modal, Input, Radio, Row, Col, Descriptions } from 'antd';
+import { Carousel, Card, Button, Form, Modal, Input, Radio, Row, Col, Typography } from 'antd';
 import { withRouter } from 'react-router-dom';
 import IqNavigation from '../../../shared/ui/iq-navigation/IqNavigation';
+
+const { Title } = Typography;
 
 const SubscriptionModal: any = Form.create({ name: 'form_in_modal' })(
 	class extends React.Component<any, any> {
@@ -63,6 +65,7 @@ class Home extends React.Component<any, any> {
 		visible: false
 	};
 
+	carouselRef: any;
 	formRef: any;
 
 	showConfirm = () => {
@@ -146,45 +149,49 @@ class Home extends React.Component<any, any> {
 			<IqNavigation>
 				<div id="home">
 					<h1>Welcome to Muslim Community Network</h1>
-					<Carousel>
-						<div className="carousel-content">
-							<ul>
-								<li>
-									<h1>Win an Umrah</h1>
-								</li>
-								<li className="inline-item">
-									<Button type="primary" size="large" onClick={this.showModal}>
-										Enroll me
-									</Button>
-								</li>
-								<li className="inline-item">
-									<Button type="danger" size="large" onClick={this.showModal}>
-										I want to sponsor
-									</Button>
-								</li>
-							</ul>
-						</div>
-						<div className="carousel-content">
-							<ul>
-								<li>
-									<h1>Win Sholarships</h1>
-								</li>
-								<li className="inline-item">
-									<Button type="primary" size="large" onClick={this.showModal}>
-										Enroll me
-									</Button>
-								</li>
-								<li className="inline-item">
-									<Button type="danger" size="large" onClick={this.showModal}>
-										I want to sponsor
-									</Button>
-								</li>
-							</ul>
-						</div>
-					</Carousel>
+					<div className="carousel-wrapper">
+						<Carousel ref={c => (this.carouselRef = c)}>
+							<div className="carousel-content">
+								<ul>
+									<li>
+										<h1>Win an Umrah</h1>
+									</li>
+									<li className="inline-item">
+										<Button type="primary" size="large" onClick={this.showModal}>
+											Enroll me
+										</Button>
+									</li>
+									<li className="inline-item">
+										<Button type="danger" size="large" onClick={this.showModal}>
+											I want to sponsor
+										</Button>
+									</li>
+								</ul>
+							</div>
+							<div className="carousel-content">
+								<ul>
+									<li>
+										<h1>Win Sholarships</h1>
+									</li>
+									<li className="inline-item">
+										<Button type="primary" size="large" onClick={this.showModal}>
+											Enroll me
+										</Button>
+									</li>
+									<li className="inline-item">
+										<Button type="danger" size="large" onClick={this.showModal}>
+											I want to sponsor
+										</Button>
+									</li>
+								</ul>
+							</div>
+						</Carousel>
+						<Button className="carousel-prev" shape="circle" icon="left" onClick={() => this.carouselRef.prev()}/>
+						<Button className="carousel-next" shape="circle" icon="right" onClick={() => this.carouselRef.next()}/>
+					</div>
 					<div className="news-stories">
 						<Button className="see-all-news" type="link">See All News</Button>
-						<h2>News & Stories</h2>
+						<Title level={2}>News & Stories</Title>
 						<hr/>
 						<Row>
 							{newsList.map((news, i) => (
@@ -202,14 +209,14 @@ class Home extends React.Component<any, any> {
 					</div>
 					<div className="donate-support">
 						<Button className="see-all-donations" type="link">See All Donations</Button>
-						<h2>Donate & Support Our Work Today</h2>
+						<Title level={2}>Donate & Support Our Work Today</Title>
 						<hr/>
 						<Row>
 							{donations.map((donation, i) => (
 								<Col key={i} className="donation-wrapper" xs={24} sm={24} md={12} lg={6}>
 									<Col xs={12} md={24}>
-										<div className="donation-value"><h2>{donation.value}</h2></div>
-										<div className="donation-description"><h2>{donation.description}</h2></div>
+										<div className="donation-value"><Title level={2}>{donation.value}</Title></div>
+										<div className="donation-description"><Title level={3}>{donation.description}</Title></div>
 									</Col>
 									<Col xs={12} md={24}>
 										<Radio.Group>
@@ -229,9 +236,11 @@ class Home extends React.Component<any, any> {
 							))}
 							<Col className="donation-wrapper" xs={24} sm={24} md={12} lg={6}>
 									<Col xs={12} md={24}>
-										<div className="donation-description"><h2>
-											We don't have the amount you're looking for?
-										</h2></div>
+										<div className="donation-description">
+											<Title level={3}>
+												We don't have the amount you're looking for?
+											</Title>
+										</div>
 									</Col>
 									<Col xs={12} md={24}>
 										<Button className="donate-right" shape="circle" icon="right"/>
