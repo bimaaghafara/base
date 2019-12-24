@@ -1,0 +1,34 @@
+
+.directory-list-wrapper{
+	.directory-item-wrapper {
+		margin: 12px 0;
+		border-bottom: 1px dashed #ccc;
+		.avatar {
+			padding: 12px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		.description {
+			width: calc(100% - 88px);
+			padding: 12px;
+			padding-top: 2px;
+			padding-left: 0px;
+			display: inline-block;
+			.title {
+				white-space: nowrap;
+				text-align: left;
+				padding: 0;
+			}
+			.button-places {
+				button {
+					margin: 6px;
+					margin-left: 0;
+				}
+			}
+			.description-tags span{
+				margin-right: 16px;
+				padding: 8px 0;
+			}
+		}
+	}
+}

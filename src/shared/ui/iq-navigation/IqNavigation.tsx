@@ -5,7 +5,7 @@ import './IqNavigation.scss';
 
 // 3rd libs
 import { Layout, Menu, Icon, Carousel, Card, Button } from 'antd';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 const { Header, Sider, Content } = Layout;
 
 
@@ -34,14 +34,14 @@ const SideNavigation = withRouter((props: any) => {
 				mode="inline" 
 				selectedKeys={selectedKeys}
 			>
-				<Menu.Item key="home" onClick={() => {history.push('/')}}>Home</Menu.Item>
-				<Menu.Item key="magazine" onClick={() => {history.push('/magazine')}}>Magazine</Menu.Item>
-				<Menu.Item key="umrah" onClick={() => {history.push('/umrah')}}>Umrah</Menu.Item>
-				<Menu.Item key="scholarships" onClick={() => {history.push('/scholarships')}}>Scholarships</Menu.Item>
-				<Menu.Item key="locals" onClick={() => {history.push('/locals')}}>Locals</Menu.Item>
-				<Menu.Item key="news-activities" onClick={() => {history.push('/news-activities')}}>News &amp; Activities</Menu.Item>
-				<Menu.Item key="donations" onClick={() => {history.push('/donations')}}>Donations</Menu.Item>
-				<Menu.Item key="classifieds" onClick={() => {history.push('/classifieds')}}>Classifieds</Menu.Item>
+				<Menu.Item key="home"><Link to='/'>Home</Link></Menu.Item>
+				<Menu.Item key="magazine"><Link to='/magazine'>Magazine</Link></Menu.Item>
+				<Menu.Item key="umrah"><Link to='/umrah'>Umrah</Link></Menu.Item>
+				<Menu.Item key="scholarships"><Link to='/scholarships'>Scholarships</Link></Menu.Item>
+				<Menu.Item key="locals"><Link to='/locals'>Locals</Link></Menu.Item>
+				<Menu.Item key="news-activities"><Link to='/news-activities'>News &amp; Activities</Link></Menu.Item>
+				<Menu.Item key="donations"><Link to='/donations'>Donations</Link></Menu.Item>
+				<Menu.Item key="classifieds"><Link to='/classifieds'>Classifieds</Link></Menu.Item>
 			</Menu>
 		</Sider>
 	);
@@ -63,14 +63,14 @@ const TopNavigation = withRouter((props: any) => {
 				selectedKeys={selectedKeys}
 				className="top-menus"
 			>
-				<Menu.Item key="home" onClick={() => {history.push('/')}}>Home</Menu.Item>
-				<Menu.Item key="magazine" onClick={() => {history.push('/magazine')}}>Magazine</Menu.Item>
-				<Menu.Item key="umrah" onClick={() => {history.push('/umrah')}}>Umrah</Menu.Item>
-				<Menu.Item key="scholarships" onClick={() => {history.push('/scholarships')}}>Scholarships</Menu.Item>
-				<Menu.Item key="locals" onClick={() => {history.push('/locals')}}>Locals</Menu.Item>
-				<Menu.Item key="news-activities" onClick={() => {history.push('/news-activities')}}>News &amp; Activities</Menu.Item>
-				<Menu.Item key="donations" onClick={() => {history.push('/donations')}}>Donations</Menu.Item>
-				<Menu.Item key="classifieds" onClick={() => {history.push('/classifieds')}}>Classifieds</Menu.Item>
+				<Menu.Item key="home"><Link to='/'>Home</Link></Menu.Item>
+				<Menu.Item key="magazine"><Link to='/magazine'>Magazine</Link></Menu.Item>
+				<Menu.Item key="umrah"><Link to='/umrah'>Umrah</Link></Menu.Item>
+				<Menu.Item key="scholarships"><Link to='/scholarships'>Scholarships</Link></Menu.Item>
+				<Menu.Item key="locals"><Link to='/locals'>Locals</Link></Menu.Item>
+				<Menu.Item key="news-activities"><Link to='/news-activities'>News &amp; Activities</Link></Menu.Item>
+				<Menu.Item key="donations"><Link to='/donations'>Donations</Link></Menu.Item>
+				<Menu.Item key="classifieds"><Link to='/classifieds'>Classifieds</Link></Menu.Item>
 			</Menu>
 		</Header>
 	)

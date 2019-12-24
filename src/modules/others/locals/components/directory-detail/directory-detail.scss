@@ -1,0 +1,333 @@
+	$left-section-width: 225px;
+	.left-section {
+		width: $left-section-width;
+		display: inline-block;
+		padding-right: 15px;
+	}
+
+	.rating {
+		text-align: center;
+		margin: 6px 0;
+	}
+	.review {
+		text-align: center;
+	}
+	.follow-business {
+		width: 100%;
+		margin: 10px 0;
+	}
+	.media-social {
+		button {
+			padding: 0;
+			height: 22px;
+			color: #333;
+			display: block;
+		}
+	}
+	.management {
+		padding: 8px;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		margin-top: 12px;
+	}
+	.quick-facts {
+		margin: 12px 0;
+		padding: 8px;
+		background-color: #eee;
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		.title {
+			margin: 0;
+		}
+		.tooltip {
+			font-size: 16px;
+			float: right;
+			padding: 0;
+		}
+		.rate {
+			padding: 4px 0;
+		}
+		.item {
+			padding-bottom: 6px;
+		}
+	}
+	.followers-wrapper {
+		.title {
+			margin: 0;
+		}
+		.follower-wrapper {
+			margin-bottom: 4px;
+			border-radius: 12px;
+			.avatar {
+				padding: 12px 12px 12px 0;
+				display: inline-block;
+				vertical-align: top;
+			}
+			.information {
+				.name {
+					padding: 0;
+				}
+				width: calc(100% - 56px);
+				padding-top: 2px;
+				padding-left: 0px;
+				display: inline-block;
+			}
+		}
+		.see-other-wrapper{
+			display: block;
+			.see-other {
+				i {vertical-align: middle;}
+				padding: 0;
+			}
+		}
+	}
+
+	.right-section {
+		vertical-align: top;
+		width: calc(100% - #{$left-section-width});
+		display: inline-block;
+	}
+
+	.summary-wrapper {
+		margin-bottom: 12px;
+		.left-summary {
+			.title {
+				margin: 0;
+				margin-bottom: 2px;
+			}
+			.address {
+				display: inline-block;
+				margin-bottom: 6px;
+				.marker-icon {
+					color: #e74c3c;
+					margin-right: 6px;
+					font-size: 16px;
+				}
+			}
+			.phone {
+				float: right;
+				margin-bottom: 6px;
+				.phone-icon {
+					border-radius: 4px;
+					background-color: #54b307;
+					color: #fff;
+					padding: 0 3px;
+					margin-right: 6px;
+					i {
+						transform: scale(-1, 1);
+						font-size: 11px;
+						vertical-align: baseline;
+					}
+				}
+			}
+		}
+		.right-buttons {
+			button {
+				width: 150px;
+				float: right;
+				padding-left: 12px;
+				text-align: left;
+				margin: 4px;
+				height: 27px;
+			}
+		}
+	}
+	.business-overview {
+		.title {
+			display: inline-block;
+		}
+		.button-places {
+			margin: 6px 0;
+			:not(:last-child) {
+				margin-right: 12px;
+			}
+			float: right;
+		}
+		.description {
+			clear: both;
+			text-align: justify;
+			padding-bottom: 18px;
+			.added-on {
+				text-align: right;
+				padding: 12px 0 6px 0;
+				border-bottom: 1px dashed black;
+			}
+		}
+	}
+	.opening-hours {
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		padding: 8px;
+		background-color: #eee;
+		margin-bottom: 18px;
+		.title {
+			display: inline-block;
+		}
+		.status {
+			float: right;
+			border: 1px solid #ccc;
+			padding: 6px 42px;
+			border-radius: 0 6px 0;
+			transform: translate(9px, -9px);
+		}
+		.schedules {
+			.schedule {
+				&:not(:first-child) {border-left: 1px solid #ccc;}
+				width: calc(100% / 7);
+				display: inline-block;
+				padding: 8px 8px;
+				.time {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+	.image-gallery {
+		.ant-carousel .slick-slide {
+			text-align: center;
+			height: 160px;
+			line-height: 160px;
+			background: #eee;
+			overflow: hidden;h3 {
+				color: #333;
+			}
+		}
+		.carousel-wrapper {
+			position: relative;
+			padding-bottom: 84px;
+			background: #ccc;
+			.carousel-prev {
+				opacity: 0.6;
+				position: absolute;
+				top: calc(50% - 57px);
+				left: 0;
+				margin: 0 20px;
+			}
+			.carousel-next {
+				opacity: 0.6;
+				position: absolute;
+				top: calc(50% - 57px);
+				right: 0;
+				margin: 0 20px;
+			}
+			.carousel-paging {
+				height: 50px;
+				width: 50px;
+				line-height: 51px;
+				display: inline-block;
+				background: #eee;
+				margin: 30px 5px;
+			}
+		}
+		.carousel-bottom-buttons {
+			text-align: right;
+			button {
+				padding-right: 0;
+				margin: 8px 0;
+			}
+		}
+	}
+	.reviews-wrapper {
+		.form-review {
+			padding: 12px;
+			border: 1px dashed #ccc;
+			border-radius: 12px;
+			.info {
+				padding: 8px 0 12px 0;
+				$right-width: 150px;
+				.left {
+					display: inline-block;
+					width: calc(100% - #{$right-width});
+				}
+				.right {
+					display: inline-block;
+					width: $right-width;
+					ul {line-height: 22px;}
+				}
+			}
+			.button-add-review-wrapper {
+				text-align: right;
+				padding-top: 12px;
+			}
+		}
+		.reviews {
+			padding: 12px 0 8px 0;
+			.review {
+				padding: 8px 0;
+				.author {
+					margin-bottom: 4px;
+					border-radius: 12px;
+					.avatar {
+						padding-right: 12px;
+						display: inline-block;
+						vertical-align: top;
+					}
+					.information {
+						text-align: left;
+						.name {
+							display: inline-block;
+							padding: 0;
+							height: 20px;
+						}
+						.follow {
+							display: inline-block;
+							margin-left: 12px;
+							font-size: 12px;
+							span {margin-left: 4px;}
+						}
+						.rated {
+							padding: 6px 0;
+							span {margin-right: 12px;}
+							font-size: 12px;
+							color: grey;
+						}
+						.description {
+							text-align: justify;
+							line-height: 18px;
+							padding-bottom: 8px;
+						}
+						.buttons-bottom {
+							text-align: right;
+							button {margin-left: 8px;}
+						}
+						width: calc(100% - 56px);
+						padding: 2px 0 12px 0;
+						display: inline-block;
+						border-bottom: 1px dashed grey;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1299px) {
+		.right-section {
+			.summary-wrapper {
+				.left-summary {
+					.address {
+						display: block;
+					}
+					.phone {
+						display: block;
+						float: unset;
+					}
+				}
+			}
+		}
+	}
+
+	.lg-more-content {
+		display: block;
+	}
+	.md-less-content {
+		display: none;
+	}
+
+	@media (max-width: 991px) {
+		.lg-more-content {
+			display: none;
+		}
+		.md-less-content {
+			display: block;
+		}
+	}
