@@ -6,7 +6,7 @@ import './home.scss';
 // 3rd libs
 import { Carousel, Card, Button, Form, Modal, Input, Radio, Row, Col, Typography } from 'antd';
 import { withRouter } from 'react-router-dom';
-import IqNavigation from '../../../shared/ui/iq-navigation/IqNavigation';
+import { IqNavigation } from '../../../shared/ui/iq-navigation/iq-navigation';
 
 const { Title } = Typography;
 

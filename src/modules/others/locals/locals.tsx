@@ -2,12 +2,12 @@ import React from 'react';
 import './locals.scss';
 
 // components
-import IqNavigation from '../../../shared/ui/iq-navigation/IqNavigation';
+import { IqNavigation } from '../../../shared/ui/iq-navigation/iq-navigation';
+import { LocalsList } from './locals-list/locals-list';
+import { LocalsDetails } from './locals-details/locals-details';
 
 // 3rd libs
 import { Route, Redirect, Switch } from 'react-router-dom';
-import { LocalsList } from './locals-list/locals-list';
-import { LocalsDetails } from './locals-details/locals-details';
 
 class Locals extends React.Component<any, any> {
 	render() {

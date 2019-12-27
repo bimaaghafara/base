@@ -1,0 +1,22 @@
+.iq-advertise-wrapper {
+	.advertise-button-wrapper {
+		text-align: right;
+		.advertise-button {
+			display: inline-block;
+			padding: 0;
+		}
+	}
+	.advertise-image {
+		background: #eee;
+		width: 100%;
+		height: 250px;
+	}
+
+	@media (max-width: 767px) {
+		.advertise-image {
+			background: #eee;
+			width: 100%;
+			height: 80px;
+		}
+	}
+}

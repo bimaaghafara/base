@@ -1,9 +1,10 @@
 import React from 'react';
+import './title.scss';
 
 // 3rd libs
 import { Breadcrumb, Icon } from 'antd';
 
-export const TitleWrapper: React.FC<any> = () => {
+export const Title: React.FC<any> = () => {
 	return (
 		<div className="title-wrapper">
 			<Breadcrumb className="breadcrumb">

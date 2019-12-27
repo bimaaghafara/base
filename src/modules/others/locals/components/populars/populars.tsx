@@ -1,9 +1,11 @@
 import React from 'react';
+import './populars.scss';
+
 import { Typography, Avatar, Button } from 'antd';
 
-export const PopularWrapper: React.FC<any> = (props) => {
+export const Popular: React.FC<any> = (props) => {
 	return (
-		<div className="popular-list-wrapper">
+		<div className="populars-wrapper">
 			<Typography.Title level={3}>Local popular list</Typography.Title>
 			{props.populars.map((offer: any, i: number) => (
 				<div className="popular-wrapper" key={i}>

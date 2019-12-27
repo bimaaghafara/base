@@ -2,7 +2,7 @@ import React from 'react';
 import './directory-detail.scss';
 import { withRouter } from 'react-router';
 import { Carousel, Button, Avatar, Typography, Icon, Row, Col, Rate, Tooltip, Tabs } from 'antd';
-import { LocationsWrapper } from '../location-wrapper/location-wrapper';
+import { Location } from '../location/location';
 import TextArea from 'antd/lib/input/TextArea';
 
 export const _DirectoryDetail: React.FC<any> = (props) => {
@@ -255,7 +255,7 @@ export const _DirectoryDetail: React.FC<any> = (props) => {
 				</div>
 				<div className="right-section">
 					<SummaryWrapper />
-					<LocationsWrapper />
+					<Location />
 					<BusinessOverview />
 					<OpeningHours />
 					<ImageGallery />
@@ -267,7 +267,7 @@ export const _DirectoryDetail: React.FC<any> = (props) => {
 				<MediaSocial />
 				<SummaryWrapper />
 				<Management />
-				<LocationsWrapper />
+				<Location />
 				<BusinessOverview />
 				<QuickFacts />
 				<OpeningHours />

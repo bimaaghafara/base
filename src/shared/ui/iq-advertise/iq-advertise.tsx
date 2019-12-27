@@ -1,11 +1,12 @@
 import React from 'react';
+import './iq-advertise.scss';
 
 // 3rd libs
 import { Button } from 'antd';
 
-export const AdvertiseWrapper: React.FC<any> = () => {
+export const IqAdvertise: React.FC<any> = () => {
 	return (
-		<div className="advertise-wrapper">
+		<div className="iq-advertise-wrapper">
 			<div className="advertise-button-wrapper">
 				<Button className="advertise-button" type="link">Advertise With Us</Button>
 			</div>

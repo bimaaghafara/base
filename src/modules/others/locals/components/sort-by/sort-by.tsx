@@ -3,7 +3,7 @@ import { Select } from 'antd';
 
 // 3rd libs
 
-export const SortByWrapper: React.FC<any> = () => {
+export const SortBy: React.FC<any> = () => {
 	return (
 		<div className="tags-wrapper" style={{ float: 'right' }}>
 			<span>Sort by: </span>

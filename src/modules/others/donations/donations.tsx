@@ -1,6 +1,6 @@
 import React from 'react';
 import './donations.scss';
-import IqNavigation from '../../../shared/ui/iq-navigation/IqNavigation';
+import { IqNavigation } from '../../../shared/ui/iq-navigation/iq-navigation';
 
 
 class Donations extends React.Component<any, any> {

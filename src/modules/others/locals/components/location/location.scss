@@ -1,0 +1,28 @@
+
+	.location-wrapper {
+		margin-bottom: 16px;
+		.locations-wrapper-title {
+			.locations-title {
+				display: inline-block;
+			}
+			.add-more {
+				padding: 0;
+				display: block;
+				@media (min-width: 992px) {
+					float: right;
+				}
+			}
+			.locations-description {
+				text-align: justify;
+				margin-bottom: 16px;
+			}
+		}
+		.maps-image {
+			background-image: url('/assets/img/maps.jpg') !important;
+			height: 250px;
+			width: 100%;
+			background-position: center;
+			background-size: cover;
+			margin-bottom: 16px;
+		}
+	}

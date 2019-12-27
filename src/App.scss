@@ -1,0 +1,23 @@
+// Layout styles
+
+$min-xxs: 0px;
+$min-xs: 480px;
+$min-sm: 576px;
+$min-md: 768px;
+$min-lg: 992px;
+$min-xl: 1200px;
+$min-xxl: 1600px;
+
+.max-xxs-content { @media (min-width: $min-xs) {display: none !important;} }
+.max-xs-content { @media (min-width: $min-sm) {display: none !important;} }
+.max-sm-content { @media (min-width: $min-md) {display: none !important;} }
+.max-md-content { @media (min-width: $min-lg) {display: none !important;} }
+.max-lg-content { @media (min-width: $min-xl) {display: none !important;} }
+.max-xl-content { @media (min-width: $min-xxl) {display: none !important;} }
+
+.min-xs-content { @media (max-width: $min-xs - 1px) {display: none !important;} }
+.min-sm-content { @media (max-width: $min-sm - 1px) {display: none !important;} }
+.min-md-content { @media (max-width: $min-md - 1px) {display: none !important;} }
+.min-lg-content { @media (max-width: $min-lg - 1px) {display: none !important;} }
+.min-xl-content { @media (max-width: $min-xl - 1px) {display: none !important;} }
+.min-xxl-content { @media (max-width: $min-xxl - 1px) {display: none !important;} }

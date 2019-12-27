@@ -3,18 +3,17 @@ import React from 'react';
 
 // components
 import { DirectorySearch } from '../components/directory-search/directory-search';
-import { TitleWrapper } from '../components/title-wrapper/title-wrapper';
-import { AdvertiseWrapper } from '../components/advertise-wrapper/advertise-wrapper';
-import { AdvertiseMobileWrapper } from '../components/advertise-mobile-wrapper/advertise-mobile-wrapper';
-import { LocationsWrapper } from '../components/location-wrapper/location-wrapper';
-import { OffersWrapper } from '../components/offers-wrapper/offers-wrapper';
-import { PopularWrapper } from '../components/populars-wrapper/populars-wrapper';
-import { SortByWrapper } from '../components/sort-by-wrapper/sort-by-wrapper';
+import { Title } from '../components/title/title';
+import { Location } from '../components/location/location';
+import { IqOffers } from '../../../../shared/ui/iq-offers/iq-offers';
+import { Popular } from '../components/populars/populars';
+import { SortBy } from '../components/sort-by/sort-by';
 import { TabsGalery } from '../components/tabs-gallery/tabs-gallery';
 import { DirectoryDetail } from '../components/directory-detail/directory-detail';
 
 // 3rd libs
 import { Row, Col, Tabs, Select} from 'antd';
+import { IqAdvertise } from '../../../../shared/ui/iq-advertise/iq-advertise';
 
 
 export class LocalsDetails extends React.Component<any, any> {
@@ -45,9 +44,9 @@ export class LocalsDetails extends React.Component<any, any> {
 			<div id="locals-page">
 				<Row className="sm-content">
 					<Col xs={24}>
-						<TitleWrapper />
+						<Title />
 						<br />
-						<AdvertiseMobileWrapper />
+						<IqAdvertise />
 						<br />
 						<DirectorySearch />
 					</Col>
@@ -66,11 +65,11 @@ export class LocalsDetails extends React.Component<any, any> {
 						</Select>
 					</Col>
 					<Col xs={20}>
-						<SortByWrapper/>
+						<SortBy/>
 					</Col>
 					<Col xs={24}>
 						<br />
-						<LocationsWrapper />
+						<Location />
 					</Col>
 					<Col xs={24}>
 						<Tabs activeKey={this.state.tabActiveKey} className="hidden-tab-pane">
@@ -78,10 +77,10 @@ export class LocalsDetails extends React.Component<any, any> {
 								<DirectoryDetail />
 							</Tabs.TabPane>
 							<Tabs.TabPane tab="Offers" key="offers">
-								<OffersWrapper offers={this.state.offers} />
+								<IqOffers offers={this.state.offers} />
 							</Tabs.TabPane>
 							<Tabs.TabPane tab="Popular List" key="popularList">
-								<PopularWrapper populars={this.state.populars} />
+								<Popular populars={this.state.populars} />
 							</Tabs.TabPane>
 						</Tabs>
 					</Col>
@@ -89,25 +88,25 @@ export class LocalsDetails extends React.Component<any, any> {
 
 				<Row gutter={[24, 24]} className="md-content">
 					<Col md={16}>
-						{/* <TitleWrapper />
+						{/* <Title />
 						<DirectorySearch />
 						<Row gutter={[24, 24,]}>
 							<Col md={24}>
-								<SortByWrapper />
+								<SortBy />
 							</Col>
 							<Col md={24}>
 								<TabsGalery />
 							</Col>
 						</Row>
-						<LocationsWrapper /> */}
+						<Location /> */}
 						<DirectoryDetail />
 					</Col>
 					<Col md={8}>
-						<AdvertiseWrapper />
+						<IqAdvertise />
 						<br /><br />
-						<OffersWrapper offers={this.state.offers} />
+						<IqOffers offers={this.state.offers} />
 						<br /><br />
-						<PopularWrapper populars={this.state.populars} />
+						<Popular populars={this.state.populars} />
 					</Col>
 				</Row>
 			</div>

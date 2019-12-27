@@ -1,7 +1,7 @@
 import React from 'react';
 
 // styles
-import './IqNavigation.scss';
+import './iq-navigation.scss';
 
 // 3rd libs
 import { Layout, Menu, Icon, Carousel, Card, Button } from 'antd';
@@ -76,7 +76,7 @@ const TopNavigation = withRouter((props: any) => {
 	)
 })
 
-class IqNavigation extends React.Component<any, any> {
+class _IqNavigation extends React.Component<any, any> {
 
 	state = {
 		collapsed: true,
@@ -149,4 +149,4 @@ class IqNavigation extends React.Component<any, any> {
   }
 }
 
-export default withRouter(IqNavigation);
+export const IqNavigation = withRouter(_IqNavigation);

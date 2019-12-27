@@ -1,7 +1,9 @@
 import React from 'react';
 import { Typography, Avatar, Button } from 'antd';
 
-export const OffersWrapper: React.FC<any> = (props) => {
+import './iq-offers.scss';
+
+export const IqOffers: React.FC<any> = (props) => {
 	return (
 		<div className="offers-wrapper">
 			<Typography.Title level={3}>Offers in your area</Typography.Title>
