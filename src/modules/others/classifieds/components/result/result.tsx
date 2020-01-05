@@ -3,11 +3,15 @@ import React from 'react';
 // 3rd libs
 import { Row, Col, Input, Button, Select, Icon, Pagination } from 'antd';
 import Grid from 'antd/lib/card/Grid';
+import { withRouter } from 'react-router-dom';
 const { Option } = Select;
 export const LocationTitle: React.FC<any> = (props) => {
     return (<p><Icon type="environment" /> {props.name}</p>)
 }
-export const Result: React.FC<any> = (props) => {
+const removeLastSlash = (url: string) => {
+	return url[url.length-1] === '/'? url.slice(0, -1) : url
+}
+const _Result: React.FC<any> = (props) => {
 	return (
 		<div className="top-categories-wrapper">
             <Row>
@@ -86,7 +90,7 @@ export const Result: React.FC<any> = (props) => {
                         </div>
                     </Col>
                     <Col md={22} xs={18}>
-                        <h1 className='result-title'>{v.title}</h1>
+                        <h1 onClick={() => {props.history.push(`${removeLastSlash(props.match.url)}/details/123abc`)}} className='result-title'>{v.title}</h1>
                         <LocationTitle name={v.location} />
                     </Col>
                 </Row> 
@@ -100,3 +104,5 @@ export const Result: React.FC<any> = (props) => {
 		</div>
 	)
 }
+
+export const Result = withRouter(_Result);

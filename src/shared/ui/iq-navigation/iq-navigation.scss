@@ -1,0 +1,67 @@
+$xs: '480px';
+$sm: '576px';
+$md: '768px';
+$lg: '992px';
+$xl: '1200px';
+$xxl: '1600px';
+
+#iq-navigation {
+	max-height: 100vh;
+	
+	.logo {
+		width: 155px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/assets/img/mcnlogo.png') !important;
+    margin: 10px 10px 10px 24px;
+	}
+
+	.toggle-side-navigation {
+		font-size: 18px;
+		line-height: 64px;
+		padding: 0 24px;
+		cursor: pointer;
+		transition: color 0.3s;
+		&.close-menu {
+			padding: 0 16px;
+			color: #fff;
+			float: right;
+		}
+		&:hover {
+			color: #1890ff;
+		}
+	}
+
+	.top-navigation {
+		background: #fff;
+		padding: 0;
+		.top-menus {
+			display: none;		
+		}
+		.logo {
+			display: none;
+		}
+	}
+
+	@media screen and (min-width: $md) {
+		.side-navigation {
+			display: none;
+			transition: all 0.25s;
+		}
+
+		.top-navigation {
+			.logo {
+				display: block;
+				float: left;
+			}
+			.toggle-side-navigation {
+				display: none;
+			}
+			.top-menus {
+				display: block;
+				line-height: 64px;
+			}
+		}
+	}
+}
