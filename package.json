@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "react-dev-utils": "^9.1.0"
   }
 }
