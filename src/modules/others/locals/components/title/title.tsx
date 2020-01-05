@@ -4,10 +4,10 @@ import './title.scss';
 // 3rd libs
 import { Breadcrumb, Icon } from 'antd';
 
-export const Title: React.FC<any> = () => {
+export const Title: React.FC<any> = (props) => {
 	return (
 		<div className="title-wrapper">
-			<Breadcrumb className="breadcrumb">
+			<Breadcrumb className="breadcrumb" style={props.style}>
 				<Breadcrumb.Item href="">
 					<Icon type="global" />
 				</Breadcrumb.Item>

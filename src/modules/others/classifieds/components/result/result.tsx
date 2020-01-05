@@ -4,7 +4,9 @@ import React from 'react';
 import { Row, Col, Input, Button, Select, Icon, Pagination } from 'antd';
 import Grid from 'antd/lib/card/Grid';
 const { Option } = Select;
-
+export const LocationTitle: React.FC<any> = (props) => {
+    return (<p><Icon type="environment" /> {props.name}</p>)
+}
 export const Result: React.FC<any> = (props) => {
 	return (
 		<div className="top-categories-wrapper">
@@ -55,6 +57,7 @@ export const Result: React.FC<any> = (props) => {
                         </Select>
                         </span>
                         <br />
+                        <br />
                     Sort by: 
                     <span className='bg-select-result'>
                         <Select
@@ -84,7 +87,7 @@ export const Result: React.FC<any> = (props) => {
                     </Col>
                     <Col md={22} xs={18}>
                         <h1 className='result-title'>{v.title}</h1>
-                        <Icon type="environment" />  {v.location}
+                        <LocationTitle name={v.location} />
                     </Col>
                 </Row> 
             )

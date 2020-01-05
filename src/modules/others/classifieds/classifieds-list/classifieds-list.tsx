@@ -7,7 +7,10 @@ import { TopCategories } from '../components/top-categories/top-categories';
 import { Result } from '../components/result/result';
 import { Search } from '../components/search/search';
 
+const H1: React.FC = () => {
+    return (<h1 style={{fontWeight: 'bold', fontSize: 25}}>Find things and services you need in your area</h1> )
 
+}
 export class ClassifiedsList extends React.Component<any, any> {
 
 	state = {
@@ -46,12 +49,13 @@ export class ClassifiedsList extends React.Component<any, any> {
 			// so sm-content and md-content wont be rendered together
 			// this will cause some component be rendered twice
 			<div id="locals-page">
-                <h1 style={{fontWeight: 'bold', fontSize: 25}}>Find things and services you need in your area</h1>
                 <Row gutter={[24, 24]} className="sm-content">
                     <Col xs={24}>
-						<Title />
-						<br />
-						<IqAdvertise />
+                        <IqAdvertise />
+                        <br />
+                        <H1 />
+                        <br />
+						<Title />					
 						<br />
                         <Search />
                         <br />
@@ -63,6 +67,8 @@ export class ClassifiedsList extends React.Component<any, any> {
 				</Row>
 				<Row gutter={[24, 24]} className="md-content">
 					<Col md={16}>
+                        <H1 />
+                        <br />
 						<Title />
                         <br />
                         <Search />

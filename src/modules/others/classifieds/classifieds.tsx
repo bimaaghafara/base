@@ -3,10 +3,12 @@ import './classifieds.scss';
 import { IqNavigation } from '../../../shared/ui/iq-navigation/iq-navigation';
 import { ClassifiedsList } from './classifieds-list/classifieds-list';
 import { Route, Redirect, Switch } from 'react-router-dom';
+import { ClassifiedsDetail } from './classifieds-detail/classifieds-detail';
 
 
 class Classifieds extends React.Component<any, any> {
 	render() {
+		console.log(`${this.props.match.url}`)
 		return (
 			<IqNavigation>
 				<div id="locals-page">
@@ -15,10 +17,10 @@ class Classifieds extends React.Component<any, any> {
 							exact path={`${this.props.match.url}`}
 							render={() => (<ClassifiedsList />)}
 						/>
-						{/* <Route
+						<Route
 							path={`${this.props.match.url}/details/:id`}
-							render={() => (<LocalsDetails />)}
-						/> */}
+							render={() => (<ClassifiedsDetail />)}
+						/>
 						<Redirect to={`/not-found?url=${this.props.location.pathname}`} />
 					</Switch>
 				</div>

@@ -36,7 +36,7 @@ const App: React.FC = () => {
         <Route path="/locals" component={Locals} />
         <Route exact path="/news-activities" component={NewsActivities} />
         <Route exact path="/donations" component={Donations} />
-        <Route exact path="/classifieds" component={Classifieds} />
+        <Route path="/classifieds" component={Classifieds} />
 
         {/* not found must be placed in last for every routes */}
         <Route component={NotFound} />
