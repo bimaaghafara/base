@@ -94,7 +94,7 @@ export class ClassifiedsDetail extends React.Component<any, any> {
                         <LocationTitle name='406 Main Street, Boonton, NJ 070005' />
 						<Row>
 							<Col md={16}>
-                        		<ImageDetail images={['https://m.economictimes.com/thumb/msid-68157999,width-1200,height-900,resizemode-4,imgsize-121400/jobs-agencies.jpg', 'https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/jobs_660x450_copy_072419055255.jpg']} />
+								<ImageDetail images={['https://m.economictimes.com/thumb/msid-68157999,width-1200,height-900,resizemode-4,imgsize-121400/jobs-agencies.jpg', 'https://carleton.ca/career/wp-content/uploads/icon_job_postings.png']} />
 							</Col>
 							<Col md={8}>
 								<Location style={{height: 320}} />
